@@ -1,0 +1,46 @@
+#!/bin/bash
+
+STATE_FILE="$HOME/.repair_state"
+
+# -------------------------
+# FASE 2 (tras reinicio)
+# -------------------------
+if [ -f "$STATE_FILE" ]; then
+    echo "Continuando tras reinicio..."
+
+    echo "Configurando DNS..."
+    networksetup -setdnsservers Ethernet 1.1.1.1 8.8.8.8
+
+    echo "Renovando DHCP..."
+    ipconfig set Ethernet DHCP
+
+    echo "Priorizando Ethernet..."
+    networksetup -ordernetworkservices Ethernet Wi-Fi
+
+    echo "Limpiando caché DNS..."
+    sudo dscacheutil -flushcache
+    sudo killall -HUP mDNSResponder
+
+    rm -f "$STATE_FILE"
+
+    echo "Proceso terminado."
+    exit 0
+fi
+
+# -------------------------
+# FASE 1 (antes de reinicio)
+# -------------------------
+
+echo "Cerrando aplicaciones de internet..."
+
+killall Safari 2>/dev/null
+killall "Google Chrome" 2>/dev/null
+killall Firefox 2>/dev/null
+killall Slack 2>/dev/null
+killall Discord 2>/dev/null
+
+echo "Guardando estado..."
+touch "$STATE_FILE"
+
+echo "Reiniciando Mac..."
+sudo reboot
