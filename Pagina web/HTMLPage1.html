@@ -1,155 +1,11 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Genion Style Web</title>
-
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #f8fafc;
-            color: #111;
-        }
-
-        /* NAVBAR */
-        .nav {
-            display: flex;
-            justify-content: space-between;
-            padding: 20px 40px;
-            background: white;
-            border-bottom: 1px solid #eee;
-            position: sticky;
-            top: 0;
-        }
-
-            .nav a {
-                margin-left: 20px;
-                text-decoration: none;
-                color: #333;
-                font-weight: 500;
-                cursor: pointer;
-            }
-
-                .nav a:hover {
-                    color: #F26A2E;
-                }
-
-        /* HERO */
-        .hero {
-            padding: 100px 20px;
-            text-align: center;
-            background: linear-gradient(120deg, #fff4ef, #ffffff);
-        }
-
-            .hero h1 {
-                font-size: 42px;
-                max-width: 800px;
-                margin: auto;
-            }
-
-            .hero p {
-                margin-top: 20px;
-                color: #555;
-            }
-
-        /* BOTÓN PRINCIPAL (GENION ORANGE) */
-        .btn {
-            margin-top: 25px;
-            padding: 14px 25px;
-            background: #F26A2E;
-            color: white;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-
-            .btn:hover {
-                background: #d95c26;
-            }
-
-        /* SECTIONS */
-        .section {
-            padding: 80px 20px;
-            max-width: 1100px;
-            margin: auto;
-        }
-
-        .cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
-            gap: 20px;
-        }
-
-        .card {
-            background: white;
-            padding: 25px;
-            border-radius: 12px;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-            transition: 0.3s;
-        }
-
-            .card:hover {
-                transform: translateY(-5px);
-            }
-
-        /* CTA */
-        .cta {
-            text-align: center;
-            padding: 80px 20px;
-            background: #F26A2E;
-            color: white;
-        }
-
-            .cta .btn {
-                background: white;
-                color: #F26A2E;
-            }
-
-                .cta .btn:hover {
-                    background: #ffe2d6;
-                }
-
-        /* FORM */
-        input, textarea {
-            width: 100%;
-            padding: 10px;
-            margin-top: 10px;
-            border-radius: 6px;
-            border: 1px solid #ccc;
-        }
-
-            input:focus, textarea:focus {
-                border-color: #F26A2E;
-                outline: none;
-            }
-
-        form {
-            max-width: 500px;
-            margin: auto;
-        }
-
-        /* FOOTER */
-        .footer {
-            text-align: center;
-            padding: 30px;
-            background: #fff;
-            border-top: 1px solid #eee;
-        }
-
-        /* PAGES */
-        .page {
-            display: none;
-        }
-
-        .active {
-            display: block;
-        }
-    </style>
+    <link rel="stylesheet" href="EstiloPagina.css">
 </head>
-
 <body>
 
     <!-- NAV -->
@@ -198,7 +54,6 @@
 
     <!-- SALAS -->
     <div id="salas" class="page">
-
         <div class="section">
             <h2>Reservar salas</h2>
             <p>Consulta disponibilidad en tiempo real</p>
@@ -207,12 +62,10 @@
                     style="border:0" width="100%" height="600"></iframe>
 
         </div>
-
     </div>
 
     <!-- CONTACTO -->
     <div id="contacto" class="page">
-
         <div class="section">
             <h2>Contacto</h2>
 
@@ -225,7 +78,6 @@
             </form>
 
         </div>
-
     </div>
 
     <!-- FOOTER -->
@@ -233,12 +85,7 @@
         GENION · hola@genion.es · +34 965 501 162
     </div>
 
-    <script>
-function showPage(pageId){
-  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
-  document.getElementById(pageId).classList.add('active');
-}
-    </script>
+    <script src="ScriptPagina.js"></script>
 
 </body>
 </html>
