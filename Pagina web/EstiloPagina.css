@@ -125,10 +125,34 @@ form {
 
 /* FOOTER */
 .footer {
-    text-align: center;
-    padding: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
     background: #fff;
     border-top: 1px solid #eee;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+/*WHATSAPP*/
+.whatsapp {
+    justify-content: flex-start;
+    display: inline-block;
+    background: #25D366;
+    color: white;
+    padding: 12px 18px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.whatsapp i {
+    margin-right: 8px;
+}
+
+.whatsapp:hover {
+    background: #1ebe5d;
 }
 
 /* PAGES */
