@@ -7,21 +7,29 @@ body {
 
 /* NAVBAR */
 .nav {
+    align-items: center;
     display: flex;
     justify-content: space-between;
-    padding: 20px 40px;
+    padding: 20px 50px;
     background: white;
     border-bottom: 1px solid #eee;
     position: sticky;
     top: 0;
+    z-index: 100;
 }
 
 .nav a {
+    font-family: Muli;
     margin-left: 20px;
     text-decoration: none;
-    color: #333;
-    font-weight: 500;
     cursor: pointer;
+    color: #263238;
+    font-size: 18px;
+    font-weight: 300;
+    padding-right: 20px !important;
+    padding-left: 20px !important;
+    text-transform: capitalize;
+    letter-spacing: 2px;
 }
 
 .nav a:hover {
@@ -118,14 +126,14 @@ body {
 /* CTA */
 .cta {
     text-align: center;
-    padding: 80px 20px;
-    background: #F26A2E;
+    padding: 40px 10px;
+    background: #2ad224;
     color: white;
 }
 
 .cta .btn {
     background: white;
-    color: #F26A2E;
+    color: #2ad224;
 }
 
 .cta .btn:hover {
@@ -151,23 +159,12 @@ form {
     margin: auto;
 }
 
-/* FOOTER */
-.footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 40px;
-    background: #fff;
-    border-top: 1px solid #eee;
-    flex-wrap: wrap;
-    gap: 15px;
-}
 
 /*WHATSAPP*/
 .whatsapp {
     justify-content: flex-start;
     display: inline-block;
-    background: #25D366;
+    background: #04782f;
     color: white;
     padding: 12px 18px;
     border-radius: 8px;

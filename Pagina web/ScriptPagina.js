@@ -11,4 +11,4 @@ function changeSlide() {
     images[index].classList.add("active");
 }
 
-setInterval(changeSlide, 4000); // cambia cada 4s
+setInterval(changeSlide, 10000); // cambia cada 10s
