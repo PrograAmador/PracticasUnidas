@@ -23,23 +23,22 @@
     <div id="home" class="page active">
 
         <div class="hero">
-    <div class="carousel">
-        <img src="imagenes/img1.jpg" class="active">
-        <img src="imagenes/img2.jpg">
-        <img src="imagenes/img3.jpg">
-    </div>
-
-    <div class="hero-content">
-        <h1>Transformamos territorios a través del emprendimiento</h1>
-        <p>Innovación, coworking y comunidades que generan impacto positivo</p>
-    </div>
-</div>
+            <div class="carousel">
+                <img src="imagenes/img1.jpg" class="active">
+                <img src="imagenes/img2.jpg">
+                <img src="imagenes/img3.jpg">
+            </div>
+            <div class="hero-content">
+                <h1>Transformamos territorios a través del emprendimiento</h1>
+                <p>Innovación, coworking y comunidades que generan impacto positivo</p>
+            </div>
+        </div>
 
         <div class="section">
             <h2>OPCIONES</h2>
             <div class="cards">
                 <div class="card" onclick="showPage('salas')">
-                    <h3 >Reservar salas</h3>
+                    <h3>Reservar salas</h3>
                     <p>Elige qué dia quieres usar nuestras salas</p>
                 </div>
                 <div class="card" onclick="showPage('contacto')">
@@ -54,8 +53,7 @@
                     <h3>Actualizar perfil</h3>
                     <p>Introduce los datos que te gustaría cambiar</p>
                 </div>
-                
-                <div class="card" >
+                <div class="card">
                     <h3>Interés en temáticas formaciones</h3>
                     <p>Mas información sobre nuestras distintas formaciones</p>
                 </div>
@@ -65,10 +63,9 @@
         <div class="cta">
             <h2>Contactanos al whatsapp</h2>
             <a href="https://wa.me/34630104972" target="_blank" class="whatsapp">
-            <i class="fa-brands fa-whatsapp"></i> WhatsApp
+                <i class="fa-brands fa-whatsapp"></i> WhatsApp
             </a>
-            <p>        GENION · hola@genion.es · +34 965 501 162
-            </p>
+            <p>GENION · hola@genion.es · +34 965 501 162</p>
         </div>
     </div>
 
@@ -76,11 +73,84 @@
     <div id="salas" class="page">
         <div class="section">
             <h2>Reservar salas</h2>
-            <p>Consulta disponibilidad en tiempo real</p>
+            <p>Consulta disponibilidad y crea una reserva</p>
 
-            <iframe src="https://calendar.google.com/calendar/embed?src=es.spain%23holiday%40group.v.calendar.google.com"
-                    style="border:0" width="100%" height="600"></iframe>
+            <!-- LEYENDA -->
+            <div class="cal-legend">
+                <div class="leg-item"><span class="leg-dot sala1"></span> Sala Reuniones</div>
+                <div class="leg-item"><span class="leg-dot sala2"></span> Sala Coworking</div>
+            </div>
 
+            <!-- CALENDARIO -->
+            <div class="cal-wrapper">
+                <div class="cal-header">
+                    <button class="cal-nav-btn" onclick="changeMonth(-1)">&#8592;</button>
+                    <span class="cal-month-label" id="month-label"></span>
+                    <button class="cal-nav-btn" onclick="changeMonth(1)">&#8594;</button>
+                </div>
+                <div class="cal-grid" id="day-labels"></div>
+                <div class="cal-grid" id="cal-grid"></div>
+            </div>
+
+            <!-- RESERVAS DEL DÍA SELECCIONADO -->
+            <div id="reservas-dia-section" class="reservas-dia" style="display:none;">
+                <h4 id="reservas-dia-title"></h4>
+                <div id="reservas-dia-list"></div>
+            </div>
+
+            <!-- FORMULARIO NUEVA RESERVA -->
+            <div class="reserva-form-box">
+                <h3>Nueva reserva</h3>
+                <p class="fecha-display">Fecha seleccionada: <span id="fecha-display">— Elige un día en el calendario</span></p>
+
+                <div class="form-row-2">
+                    <div>
+                        <label>Sala</label>
+                        <select id="sala">
+                            <option value="sala1">Sala de Reuniones</option>
+                            <option value="sala2">Sala Coworking</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label>Tu nombre</label>
+                        <input type="text" id="nombre" placeholder="Nombre y apellido">
+                    </div>
+                </div>
+                <div class="form-row-2">
+                    <div>
+                        <label>Hora inicio</label>
+                        <select id="hora-inicio">
+                            <option>08:00</option><option>08:30</option><option>09:00</option>
+                            <option>09:30</option><option>10:00</option><option>10:30</option>
+                            <option>11:00</option><option>11:30</option><option>12:00</option>
+                            <option>12:30</option><option>13:00</option><option>13:30</option>
+                            <option>14:00</option><option>14:30</option><option>15:00</option>
+                            <option>15:30</option><option>16:00</option><option>16:30</option>
+                            <option>17:00</option><option>17:30</option><option>18:00</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label>Hora fin</label>
+                        <select id="hora-fin">
+                            <option>09:00</option><option>09:30</option><option>10:00</option>
+                            <option>10:30</option><option>11:00</option><option>11:30</option>
+                            <option>12:00</option><option>12:30</option><option>13:00</option>
+                            <option>13:30</option><option>14:00</option><option>14:30</option>
+                            <option>15:00</option><option>15:30</option><option>16:00</option>
+                            <option>16:30</option><option>17:00</option><option>17:30</option>
+                            <option>18:00</option><option>18:30</option><option>19:00</option>
+                        </select>
+                    </div>
+                </div>
+                <div>
+                    <label>Motivo (opcional)</label>
+                    <input type="text" id="motivo" placeholder="Reunión, formación...">
+                </div>
+
+                <button class="btn" id="btn-reservar" onclick="crearReserva()" disabled style="width:100%;margin-top:15px;">
+                    Selecciona un día primero
+                </button>
+            </div>
         </div>
     </div>
 
@@ -95,15 +165,15 @@
                 <input type="text" placeholder="Empresa">
                 <textarea placeholder="Mensaje"></textarea>
                 <div class="form-buttons">
-                <button type="button" class="btn" onclick="showPage('home')">Volver</button>
-                <button class="btn">Enviar</button>
-            </div>
-         </div>
+                    <button type="button" class="btn" onclick="showPage('home')">Volver</button>
+                    <button class="btn">Enviar</button>
+                </div>
             </form>
 
         </div>
     </div>
-    <!--para acceder a trello-->
+
+    <!-- TRELLO -->
     <div id="trello" class="page">
         <div class="section">
             <h2>E-mail</h2>
@@ -113,12 +183,12 @@
                 <textarea placeholder="Mensaje"></textarea>
                 <button type="button" class="btn" onclick="showPage('home')">Volver</button>
                 <button class="btn">Enviar</button>
-                
             </form>
 
         </div>
     </div>
-    <!--Para cambiar perfil-->
+
+    <!-- PERFIL -->
     <div id="perfil" class="page">
         <div class="section">
             <h2>Introduce los datos a cambiar</h2>
@@ -137,7 +207,8 @@
         </div>
     </div>
 
-    
+    <!-- TOAST -->
+    <div class="toast" id="toast"></div>
 
     <script src="ScriptPagina.js"></script>
 
