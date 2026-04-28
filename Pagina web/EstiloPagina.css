@@ -98,6 +98,11 @@ body {
     background: #d95c26;
 }
 
+.btn:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+}
+
 /* SECTIONS */
 .section {
     padding: 80px 20px;
@@ -141,15 +146,18 @@ body {
 }
 
 /* FORM */
-input, textarea {
+input, textarea, select {
     width: 100%;
     padding: 10px;
     margin-top: 10px;
     border-radius: 6px;
     border: 1px solid #ccc;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
 }
 
-input:focus, textarea:focus {
+input:focus, textarea:focus, select:focus {
     border-color: #F26A2E;
     outline: none;
 }
@@ -158,7 +166,6 @@ form {
     max-width: 500px;
     margin: auto;
 }
-
 
 /*WHATSAPP*/
 .whatsapp {
@@ -187,4 +194,300 @@ form {
 
 .active {
     display: block;
+}
+
+/* =====================
+   SISTEMA DE RESERVAS
+   ===================== */
+
+/* Leyenda */
+.cal-legend {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.leg-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    color: #555;
+}
+
+.leg-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 3px;
+    display: inline-block;
+}
+
+.leg-dot.sala1 { background: #bfb8f7; }
+.leg-dot.sala2 { background: #6eceb2; }
+
+/* Contenedor calendario */
+.cal-wrapper {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    padding: 24px;
+    margin-bottom: 24px;
+}
+
+.cal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+}
+
+.cal-nav-btn {
+    background: none;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 6px 14px;
+    cursor: pointer;
+    font-size: 16px;
+    color: #333;
+    transition: 0.2s;
+}
+
+.cal-nav-btn:hover {
+    border-color: #F26A2E;
+    color: #F26A2E;
+}
+
+.cal-month-label {
+    font-size: 18px;
+    font-weight: 600;
+    color: #111;
+}
+
+/* Grid del calendario */
+.cal-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 6px;
+}
+
+.cal-day-label {
+    text-align: center;
+    font-size: 12px;
+    font-weight: 600;
+    color: #888;
+    padding: 4px 0 8px;
+}
+
+.cal-day {
+    min-height: 72px;
+    border-radius: 8px;
+    border: 1px solid #eee;
+    padding: 6px;
+    cursor: pointer;
+    transition: background 0.15s, border-color 0.15s;
+    background: white;
+}
+
+.cal-day:hover:not(.cal-day--empty):not(.cal-day--past) {
+    border-color: #F26A2E;
+    background: #fff4ef;
+}
+
+.cal-day--empty {
+    border: none;
+    background: none;
+    cursor: default;
+}
+
+.cal-day--past {
+    opacity: 0.4;
+    cursor: default;
+}
+
+.cal-day--today .cal-day-num {
+    background: #F26A2E;
+    color: white;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cal-day--selected {
+    border-color: #F26A2E !important;
+    border-width: 2px !important;
+}
+
+.cal-day-num {
+    font-size: 13px;
+    font-weight: 600;
+    color: #111;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Chips de reserva dentro del día */
+.res-chips {
+    margin-top: 4px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.res-chip {
+    font-size: 10px;
+    padding: 2px 5px;
+    border-radius: 4px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.res-chip.sala1 { background: #EEEDFE; color: #3C3489; }
+.res-chip.sala2 { background: #E1F5EE; color: #085041; }
+
+.res-chip-more {
+    font-size: 10px;
+    color: #888;
+}
+
+/* Reservas del día seleccionado */
+.reservas-dia {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    padding: 20px 24px;
+    margin-bottom: 24px;
+}
+
+.reservas-dia h4 {
+    font-size: 14px;
+    font-weight: 600;
+    color: #555;
+    margin: 0 0 12px;
+}
+
+.res-card {
+    background: #f8fafc;
+    border-radius: 8px;
+    padding: 10px 14px;
+    margin-bottom: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.res-info {
+    font-size: 14px;
+    font-weight: 500;
+    color: #111;
+}
+
+.res-meta {
+    font-size: 12px;
+    color: #777;
+    margin-top: 2px;
+}
+
+.res-badge {
+    font-size: 11px;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-weight: 500;
+}
+
+.res-badge.sala1 { background: #EEEDFE; color: #3C3489; }
+.res-badge.sala2 { background: #E1F5EE; color: #085041; }
+
+.btn-cancelar {
+    background: none;
+    border: 1px solid #e0b3b3;
+    color: #c0392b;
+    border-radius: 6px;
+    padding: 4px 10px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: 0.2s;
+    white-space: nowrap;
+}
+
+.btn-cancelar:hover {
+    background: #fdecea;
+    border-color: #c0392b;
+}
+
+.res-empty {
+    font-size: 13px;
+    color: #888;
+}
+
+/* Formulario nueva reserva */
+.reserva-form-box {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    padding: 24px;
+}
+
+.reserva-form-box h3 {
+    margin: 0 0 8px;
+    font-size: 18px;
+}
+
+.fecha-display {
+    font-size: 14px;
+    color: #555;
+    margin: 0 0 16px;
+}
+
+.fecha-display span {
+    color: #F26A2E;
+    font-weight: 600;
+}
+
+.form-row-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.reserva-form-box label {
+    display: block;
+    font-size: 12px;
+    color: #555;
+    margin-bottom: 2px;
+    margin-top: 10px;
+}
+
+/* Toast notificación */
+.toast {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    background: #111;
+    color: white;
+    padding: 12px 18px;
+    border-radius: 8px;
+    font-size: 13px;
+    display: none;
+    z-index: 9999;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.toast.toast--ok    { background: #F26A2E; }
+.toast.toast--error { background: #c0392b; }
+
+@media (max-width: 600px) {
+    .form-row-2 {
+        grid-template-columns: 1fr;
+    }
+    .cal-day {
+        min-height: 52px;
+    }
 }
