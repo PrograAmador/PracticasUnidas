@@ -53,22 +53,28 @@
                     <h3>Actualizar perfil</h3>
                     <p>Introduce los datos que te gustaría cambiar</p>
                 </div>
+                <div class="card" onclick="showPage('faq')">
+                <h3>Preguntas frecuentes</h3>
+                <p>Resuelve tus dudas sobre el espacio y los servicios</p>
+                </div>
                 <div class="card">
                     <h3>Interés en temáticas formaciones</h3>
                     <p>Mas información sobre nuestras distintas formaciones</p>
                 </div>
-                <div class="card">
-                    <h3>FAQ</h3>
-                    <p>Preguntas frequentes</p>
-                </div>
+                <div class="card" onclick="window.open('https://genion.theglocal.network/ideas/hubitat', '_blank')">
+                <h3>Acceso a LA Network</h3>
+                <p>Conecta con la Comunidad Hubitante y aprovecha numerosas oportunidades</p>
+            </div>
             </div>
         </div>
-        <div class="cta1">
-    <h2>Contactanos al Whatsapp</h2>
-    <a href="https://wa.me/34630104972" target="_blank" class="whatsapp">
-        <i class="fa-brands fa-whatsapp"></i> WhatsApp
-    </a>
-</div>
+                <div class="cta1">
+            <h2>Únete al whatsapp</h2>
+            <div id="wa-buttons">
+                <a class="whatsapp" onclick="expandWA(event)">
+                    <i class="fa-brands fa-whatsapp"></i> WhatsApp
+                </a>
+            </div>
+        </div>
     </div>
 
     <!-- SALAS -->
@@ -202,6 +208,151 @@
 
         </div>
     </div>
+    <!-- FAQ -->
+<div id="faq" class="page">
+    <div class="section" style="text-align:left; max-width:700px;">
+        <h2 style="text-align:center;">Preguntas frecuentes</h2>
+
+        <div class="faq-group">
+            <h4>Acceso y horarios</h4>
+            <div class="faq-item">
+                <button class="faq-q" onclick="toggleFaq(this)">¿Cuál es el horario del coworking?<span>+</span></button>
+                <div class="faq-a">Jornada completa: 8:00–20:00 · Media jornada mañanas: 8:00–14:00 · Media jornada tardes: 14:00–20:00.</div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-q" onclick="toggleFaq(this)">¿Cómo se accede al espacio?<span>+</span></button>
+                <div class="faq-a">Mediante huella digital.</div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-q" onclick="toggleFaq(this)">¿Se puede acceder fuera del horario contratado?<span>+</span></button>
+                <div class="faq-a">No directamente. Debes contactar con otro compañero; el personal de limpieza no puede darte acceso.</div>
+            </div>
+            <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)">¿Qué ocurre si tengo problemas con el acceso por huella?<span>+</span></button>
+            <div class="faq-a">Contacta con el personal de recepción para que revisen o reactiven tu acceso.</div>
+        </div>
+        </div>
+
+        <div class="faq-group">
+            <h4>Puesto de trabajo</h4>
+            <div class="faq-item">
+                <button class="faq-q" onclick="toggleFaq(this)">¿Qué incluye el puesto?<span>+</span></button>
+                <div class="faq-a">Espacio de trabajo, conexión a internet (wifi o cable) y enchufes. Se pueden dejar objetos personales.</div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-q" onclick="toggleFaq(this)">¿Hay normas de convivencia?<span>+</span></button>
+                <div class="faq-a">Sí. Se debe mantener el orden, la limpieza y el respeto hacia los demás usuarios.</div>
+            </div>
+            <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)">¿Qué ocurre si alguien no respeta las normas?<span>+</span></button>
+            <div class="faq-a">Comunícalo al personal de Hubitat para que gestionen la situación según la normativa.</div>
+        </div>
+        </div>
+
+        <div class="faq-group">
+            <h4>Recepción</h4>
+            <div class="faq-item">
+                <button class="faq-q" onclick="toggleFaq(this)">¿Cuál es el horario de recepción?<span>+</span></button>
+                <div class="faq-a">Lunes a viernes de 9:00 a 14:00. Pueden ausentarse puntualmente.</div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-q" onclick="toggleFaq(this)">¿Se pueden recibir paquetes?<span>+</span></button>
+                <div class="faq-a">No es un servicio oficial, pero pueden aceptarse si hay consentimiento del personal presente.</div>
+            </div>
+            <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)">¿Es obligatorio que recepción acepte mis paquetes?<span>+</span></button>
+            <div class="faq-a">No, es un servicio no oficial que depende de la disponibilidad y consentimiento del personal.</div>
+        </div>
+        </div>
+
+        <div class="faq-group">
+            <h4>Cocina</h4>
+            <div class="faq-item">
+                <button class="faq-q" onclick="toggleFaq(this)">¿Cómo funciona la cocina?<span>+</span></button>
+                <div class="faq-a">Cada usuario trae su menaje y lo guarda en su taquilla. Se debe limpiar todo lo usado. La nevera es compartida; etiqueta tus alimentos.</div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-q" onclick="toggleFaq(this)">¿Cómo funciona el café?<span>+</span></button>
+                <div class="faq-a">Cafetera de goteo: contribución económica voluntaria. Cafetera de cápsulas: cada usuario trae las suyas.</div>
+            </div>
+            <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)">¿Se fomenta el uso de materiales reutilizables?<span>+</span></button>
+            <div class="faq-a">Sí, se promueve evitar vasos de plástico y utilizar menaje propio.</div>
+        </div>
+        </div>
+
+        <div class="faq-group">
+            <h4>Salas, cabinas e impresora</h4>
+            <div class="faq-item">
+                <button class="faq-q" onclick="toggleFaq(this)">¿Cómo se reservan las salas?<span>+</span></button>
+                <div class="faq-a">Mediante las hojas en las puertas de las salas. Se pueden usar sin reserva si están libres.</div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-q" onclick="toggleFaq(this)">¿Para qué sirven las cabinas?<span>+</span></button>
+                <div class="faq-a">Para llamadas o videoconferencias largas que puedan molestar en el espacio común.</div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-q" onclick="toggleFaq(this)">¿Cómo funciona la impresora?<span>+</span></button>
+                <div class="faq-a">Previo pago de tasa: B/N 0,03 € · Color 0,27 €. Se paga en el Ayuntamiento (presencial u online) y se entrega el justificante en recepción.</div>
+            </div>
+            <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)">¿Qué debo hacer después de usar una sala?<span>+</span></button>
+            <div class="faq-a">Dejarla ordenada y en condiciones adecuadas para el siguiente usuario.</div>
+            </div>
+            <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)">¿Qué ocurre si me quedo sin saldo de impresión?<span>+</span></button>
+            <div class="faq-a">Realiza un nuevo pago y envía el justificante a recepción para reactivar el servicio.</div>
+            </div>
+        </div>
+
+        <div class="faq-group">
+            <h4>Pagos</h4>
+            <div class="faq-item">
+                <button class="faq-q" onclick="toggleFaq(this)">¿Cómo y cuándo se paga?<span>+</span></button>
+                <div class="faq-a">Mediante tasas del Ayuntamiento. Pago en los primeros 10 días del mes; justificante antes del día 15. El impago genera pérdida de acceso y deuda con la Administración.</div>
+            </div>
+            <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)">¿Quién gestiona los pagos del coworking?<span>+</span></button>
+            <div class="faq-a">El Ayuntamiento de Mutxamel, no directamente Hubitat o Genion.</div>
+        </div>
+        </div>
+
+        <div class="faq-group">
+            <h4>Comunidad y eventos</h4>
+            <div class="faq-item">
+                <button class="faq-q" onclick="toggleFaq(this)">¿Aparezco en la web de Hubitat?<span>+</span></button>
+                <div class="faq-a">Sí, tras completar tu perfil. Si te vas, sigues apareciendo como miembro que formó parte de la comunidad.</div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-q" onclick="toggleFaq(this)">¿Hay eventos?<span>+</span></button>
+                <div class="faq-a">Sí, públicos y privados. Se comunican por redes sociales, email y WhatsApp. Los coworkers suelen tener plaza asegurada.</div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-q" onclick="toggleFaq(this)">¿Hay mentorías?<span>+</span></button>
+                <div class="faq-a">Sí: de marca y diferenciación, y de viabilidad económica. Se solicitan a través de "La Network".</div>
+            </div>
+            <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)">¿Las mentorías tienen coste adicional?<span>+</span></button>
+            <div class="faq-a">No, están incluidas para todos los usuarios del espacio.</div>
+        </div>
+            <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)">¿Es obligatorio asistir a los eventos?<span>+</span></button>
+            <div class="faq-a">No, pero forma parte de la experiencia coworking y se recomienda participar.</div>
+        </div>
+        </div>
+        <div class="faq-group">
+            <h4>Incidencias</h4>
+            <div class="faq-item">
+                <button class="faq-q" onclick="toggleFaq(this)">¿Dónde se comunican problemas o incidencias?<span>+</span></button>
+                <div class="faq-a">Al personal de recepción o a través de los canales de contacto: email, teléfono o WhatsApp.</div>
+            </div>
+        </div>
+
+        <div style="text-align:center; margin-top: 40px;">
+            <button class="btn" onclick="showPage('home', true)">Volver</button>
+        </div>
+    </div>
+</div>
     <!-- FOOTER -->
     <footer class="footer">
         <div class="footer-logos">

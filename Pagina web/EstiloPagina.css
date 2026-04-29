@@ -187,7 +187,7 @@ form {
 .whatsapp {
     justify-content: flex-start;
     display: inline-block;
-    background: #91E665;
+    background: #1ebe5d;
     color: white;
     padding: 12px 18px;
     border-radius: 8px;
@@ -199,9 +199,7 @@ form {
     margin-right: 8px;
 }
 
-.whatsapp:hover {
-    background: #1ebe5d;
-}
+
 
 /* PAGES */
 .page {
@@ -571,5 +569,69 @@ form {
     .cal-day {
         min-height: 52px;
     }
+}
+/* FAQ */
+.faq-group {
+    margin-bottom: 28px;
+}
+
+.faq-group h4 {
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #F26A2E;
+    margin: 0 0 10px;
+}
+
+.faq-item {
+    border-bottom: 1px solid #eee;
+}
+
+.faq-q {
+    width: 100%;
+    background: none;
+    border: none;
+    padding: 14px 0;
+    text-align: left;
+    font-size: 15px;
+    font-weight: 500;
+    color: #111;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+}
+
+.faq-q span {
+    font-size: 20px;
+    color: #F26A2E;
+    transition: transform 0.2s;
+    flex-shrink: 0;
+}
+
+.faq-q.open span {
+    transform: rotate(45deg);
+}
+
+.faq-a {
+    display: none;
+    font-size: 14px;
+    color: #555;
+    padding: 0 0 14px;
+    line-height: 1.6;
+}
+
+.faq-a.open {
+    display: block;
+}
+#wa-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+.whatsapp--informal {
+    background: #1ebe5d;
 }
 

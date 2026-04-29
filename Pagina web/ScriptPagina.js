@@ -13,6 +13,30 @@ function showPage(id, scrollToCards = false) {
     }, 50);
 }
 }
+function expandWA(e) {
+    e.preventDefault();
+    document.getElementById('wa-buttons').innerHTML = `
+        <a href="https://wa.me/TU_ENLACE_FORMAL" target="_blank" class="whatsapp">
+            <i class="fa-brands fa-whatsapp"></i> Grupo formal
+        </a>
+        <a href="https://chat.whatsapp.com/Jm6icCapT92CoASJbQPWwf" target="_blank" class="whatsapp whatsapp--informal">
+        <i class="fa-brands fa-whatsapp"></i> Grupo informal
+         </a>
+    `;
+}
+/*FAQ*/
+function toggleFaq(btn) {
+    const answer = btn.nextElementSibling;
+    const isOpen = answer.classList.contains('open');
+    // cierra todos
+    document.querySelectorAll('.faq-a').forEach(a => a.classList.remove('open'));
+    document.querySelectorAll('.faq-q').forEach(q => q.classList.remove('open'));
+    // abre el clickado si estaba cerrado
+    if (!isOpen) {
+        answer.classList.add('open');
+        btn.classList.add('open');
+    }
+}
 
 // ─── CARRUSEL ─────────────────────────────────────────────────
 document.addEventListener("DOMContentLoaded", function () {
