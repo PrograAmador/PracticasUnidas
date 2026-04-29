@@ -136,11 +136,20 @@ body {
 }
 
 /* CTA */
-.cta {
+.cta1 {
+    max-width: 400px;
+    margin: 0 auto 60px auto;
+    padding: 40px 30px;
+    background: #e8f5d9;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
     text-align: center;
-    padding: 10px 10px;
-    background: #67BC3B;
-    color: white;
+    color: #2d6a10;
+}
+
+.cta1 h2 {
+    margin: 0 0 16px 0;
+    color: #2d6a10;
 }
 
 .cta .btn {
@@ -563,4 +572,4 @@ form {
         min-height: 52px;
     }
 }
-}
+
