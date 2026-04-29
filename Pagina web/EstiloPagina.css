@@ -3,6 +3,12 @@ body {
     font-family: Arial, sans-serif;
     background: #f8fafc;
     color: #111;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+.page.active {
+    flex: 1;
 }
 
 /* NAVBAR */
@@ -196,7 +202,6 @@ form {
 .active {
     display: block;
 }
-<<<<<<< HEAD
 /* FOOTER */
 .footer {
     background: #6abf2e; /* verde del footer original */
@@ -261,7 +266,7 @@ form {
 
 .footer-copy a:hover {
     border-bottom-color: white;
-=======
+}
 
 /* =====================
    SISTEMA DE RESERVAS
@@ -557,5 +562,5 @@ form {
     .cal-day {
         min-height: 52px;
     }
->>>>>>> origin/main
+}
 }
