@@ -1,10 +1,21 @@
   // ── Navegación entre páginas ──────────────────────────────────────────────────
-  function showPage(id, scrollTop) {
-      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-      const target = document.getElementById(id);
-      if (target) target.classList.add('active');
-      if (scrollTop) window.scrollTo({ top: 0, behavior: 'smooth' });
-  }
+ function showPage(id, scrollToCards = false) {
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+
+    if (scrollToCards) {
+        setTimeout(() => {
+            const cards = document.querySelector('.cards');
+            if (cards) {
+                cards.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            } else {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        }, 50);
+    } else {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+}
 
   // ── Carrusel hero ─────────────────────────────────────────────────────────────
   (function () {
