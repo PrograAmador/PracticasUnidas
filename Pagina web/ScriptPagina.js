@@ -35,10 +35,13 @@
       const container = document.getElementById('wa-buttons');
       container.innerHTML = `
           <a class="whatsapp whatsapp--informal" href="https://chat.whatsapp.com/ENLACE_GRUPO_1" target="_blank">
-              <i class="fa-brands fa-whatsapp"></i> Grupo General
+              <i class="fa-brands fa-whatsapp"></i> Grupo comunicaciones
           </a>
-          <a class="whatsapp whatsapp--informal" href="https://chat.whatsapp.com/ENLACE_GRUPO_2" target="_blank">
-              <i class="fa-brands fa-whatsapp"></i> Grupo Eventos
+          <a class="whatsapp whatsapp--informal" href="https://chat.whatsapp.com/Jm6icCapT92CoASJbQPWwf" target="_blank">
+              <i class="fa-brands fa-whatsapp"></i> Grupo informal
+          </a>
+          <a class="whatsapp whatsapp--informal" href="https://api.whatsapp.com/message/W3VVZNRDKIXDC1?autoload=1&app_absent=0" target="_blank">
+              <i class="fa-brands fa-whatsapp"></i> Contacto directo
           </a>`;
   }
 
