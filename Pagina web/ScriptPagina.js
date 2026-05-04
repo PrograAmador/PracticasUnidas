@@ -34,7 +34,7 @@
       e.preventDefault();
       const container = document.getElementById('wa-buttons');
       container.innerHTML = `
-          <a class="whatsapp whatsapp--informal" href="https://chat.whatsapp.com/ENLACE_GRUPO_1" target="_blank">
+          <a class="whatsapp whatsapp--informal" href="https://chat.whatsapp.com/I1N3fYruwNMIsRn2qmhKEm" target="_blank">
               <i class="fa-brands fa-whatsapp"></i> Grupo comunicaciones
           </a>
           <a class="whatsapp whatsapp--informal" href="https://chat.whatsapp.com/Jm6icCapT92CoASJbQPWwf" target="_blank">
